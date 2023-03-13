@@ -22,7 +22,6 @@ public class BoardGame {
         return defaultBoardGame;
     }
 
-
     public int addPlayer(int currentPlayers, int maxPlayers) {
         if (currentPlayers < maxPlayers) {
             currentPlayers += 1;
@@ -42,14 +41,15 @@ public class BoardGame {
     }
 
     public static void main(String[] args) {
-        BoardGame[] boardgames = new BoardGame[4];
-        boardgames[0] = new BoardGame();
-        boardgames[1] = new BoardGame("Monopolia", 3, 6, 4);
-        boardgames[2] = BoardGame.getInstance();
-        boardgames[3] = BoardGame.getInstance();
+        BoardGame[] boardgames = {
+                new BoardGame(),
+                new BoardGame("Monopolia", 3, 6, 4),
+                BoardGame.getInstance(),
+                BoardGame.getInstance()
+        };
 
-        for (int i = 0; i < boardgames.length; i++) {
-            System.out.println(boardgames[i]);
+        for (BoardGame i: boardgames) {
+            System.out.println(i);
         }
     }
 }
