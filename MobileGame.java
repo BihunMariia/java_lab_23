@@ -1,4 +1,4 @@
-package ua.lviv.iot.algo.part1.lab1;
+package ua.lviv.iot;
 
 import lombok.ToString;
 import lombok.Setter;
@@ -7,19 +7,27 @@ import lombok.Getter;
 @Setter
 @ToString(callSuper = true)
 
-public class MobileGame extends Game{
+public class MobileGame extends Game {
     private int downloadSize;
     private int minAge;
 
     @Override
     int connectPlayer(int currentPlayers, int maxPlayers) {
-        return 0;
+        if (currentPlayers < maxPlayers) {
+            currentPlayers += 1;
+        }
+        return currentPlayers;
     }
 
     @Override
     int disconnectPlayer(int currentPlayers, int minPlayers) {
-        return 0;
+        if (currentPlayers > minPlayers) {
+            currentPlayers -= 1;
+        }
+        return currentPlayers;
     }
+
+
 
     public MobileGame(){}
 

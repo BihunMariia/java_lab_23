@@ -1,4 +1,4 @@
-package ua.lviv.iot.algo.part1.lab1;
+package ua.lviv.iot;
 
 import lombok.Setter;
 import lombok.Getter;
@@ -28,11 +28,17 @@ public class PlayStationGame extends Game{
     }
     @Override
     int connectPlayer(int currentPlayers, int maxPlayers) {
-        return 0;
+        if (currentPlayers < maxPlayers) {
+            currentPlayers += 1;
+        }
+        return currentPlayers;
     }
 
     @Override
     int disconnectPlayer(int currentPlayers, int minPlayers) {
-        return 0;
-    }
+            if (currentPlayers > minPlayers) {
+                currentPlayers -= 1;
+            }
+            return currentPlayers;
+        }
 }
