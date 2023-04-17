@@ -1,4 +1,4 @@
-package ua.lviv.iot.algo.part1.lab1;
+package ua.lviv.iot;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +15,9 @@ public class GameManager {
         return gameList.stream()
                 .filter(game -> game.getMaxPlayers() > 5)
                 .collect(Collectors.toList());
+    }
+    public static void someMethod(){
+
     }
 
     public List<Game> findGamesWithMinPlayersEqualsTwo() {
@@ -50,8 +53,9 @@ public class GameManager {
         System.out.println("\n Games with min players equals two: \n");
 
         System.out.println(gameManager.findGamesWithMinPlayersEqualsTwo());
+    }
 
-
-
+    public List<Game> getGameList() {
+        return gameList;
     }
 }

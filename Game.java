@@ -1,9 +1,10 @@
-package ua.lviv.iot.algo.part1.lab1;
+package ua.lviv.iot;
 
 import lombok.ToString;
+
 @ToString
 
-public abstract class Game{
+public abstract class Game {
     protected String title;
     protected int minPlayers;
     public int maxPlayers;
@@ -15,11 +16,11 @@ public abstract class Game{
 
     abstract int disconnectPlayer(int currentPlayers, int minPlayers);
 
-    public int getMaxPlayers(){
+    public int getMaxPlayers() {
         return maxPlayers;
     }
 
-    public int getMinPlayers(){
+    public int getMinPlayers() {
         return minPlayers;
     }
 
