@@ -12,6 +12,14 @@ public abstract class Game {
     protected String gamePublisher;
     protected int yearOfRelease;
 
+    public String getHeaders(){
+        return "title, maxPlayers, currentPlayers, gamePublisher, yearOfRelease";
+    }
+
+    public String toCSV(){
+        return String.format("%s, %d, %d, %s, %d", title, maxPlayers, currentPlayers, gamePublisher, yearOfRelease);
+    }
+
     abstract int connectPlayer(int currentPlayers, int maxPlayers);
 
     abstract int disconnectPlayer(int currentPlayers, int minPlayers);
