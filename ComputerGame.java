@@ -13,7 +13,13 @@ public class ComputerGame extends Game {
     private int price;
     private String occupiedSpaceOnTheDisk;
 
-    public ComputerGame(){}
+    public String getHeaders(){
+        return super.getHeaders() + "," + "platform, price, occupiedSpaceOnTheDisk";
+    }
+
+    public String toCSV(){
+        return  String.format("%s, %s, %d, %s",super.toCSV(), platform, price, occupiedSpaceOnTheDisk);
+    }
 
     public ComputerGame(String title, int minPlayers, int maxPlayers, int currentPlayers,
                         String gamePublisher, int yearOfRelease, String platform, int price,String occupiedSpaceOnTheDisk){

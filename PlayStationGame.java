@@ -12,7 +12,13 @@ public class PlayStationGame extends Game{
     private String genre;
     private boolean offlinePlayAble;
 
-    public PlayStationGame(){}
+    public String getHeaders(){
+        return super.getHeaders() + "," + "genre, offlinePlayAble";
+    }
+
+    public String toCSV(){
+        return  String.format("%s, %s, %s",super.toCSV(), genre, offlinePlayAble);
+    }
 
     public PlayStationGame(String title, int minPlayers, int maxPlayers, int currentPlayers,
                         String gamePublisher, int yearOfRelease, String genre, boolean offlinePlayAble ){

@@ -11,6 +11,13 @@ public class MobileGame extends Game {
     private int downloadSize;
     private int minAge;
 
+    public String getHeaders(){
+        return super.getHeaders() + "," + "downloadSize, minAge";
+    }
+
+    public String toCSV(){
+        return  String.format("%s, %d, %d",super.toCSV(), downloadSize, minAge);
+    }
     @Override
     int connectPlayer(int currentPlayers, int maxPlayers) {
         if (currentPlayers < maxPlayers) {
